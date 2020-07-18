@@ -64,6 +64,7 @@
                         <viewLayoutGuide key="safeArea" id="1Yf-tZ-5Dm"/>
                     </view>
                     <connections>
+                        <outlet property="AnimationButton" destination="uxb-53-Uq4" id="SnO-VP-zg4"/>
                         <outlet property="imageView" destination="kUM-wA-sr1" id="Esi-yv-hAF"/>
                         <outlet property="move2Button" destination="zOf-4p-1pj" id="SQ8-us-ZCO"/>
                         <outlet property="moveBotton" destination="af9-oF-edJ" id="IlZ-U5-qiy"/>

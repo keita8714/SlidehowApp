@@ -12,7 +12,11 @@ class ViewController: UIViewController {
     var imageArray = [UIImage]()
     var count = Int()
     var timer:Timer!
-
+    let playback = "再生"
+    let stop = "停止"
+    
+    @IBOutlet var AnimationButton: UIButton!
+    
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var moveBotton: UIButton!
@@ -29,6 +33,8 @@ class ViewController: UIViewController {
         }
             //最初に表示したい画像
         imageView.image = UIImage(named: "0")
+        
+        AnimationButton.setTitle(playback, for: .normal)
         }
     
     func startTimer(){
@@ -57,11 +63,14 @@ class ViewController: UIViewController {
             startTimer()
             moveBotton.isEnabled = false
             move2Button.isEnabled = false
+            AnimationButton.setTitle(stop, for: .normal)
+    
         }else{
             self.timer.invalidate()
             moveBotton.isEnabled = true
             move2Button.isEnabled = true
             self.timer = nil
+            AnimationButton.setTitle(playback, for: .normal)
         }
         
     }
@@ -90,6 +99,9 @@ class ViewController: UIViewController {
    
     @IBAction func tapImage(_ sender: Any) {
         performSegue(withIdentifier: "next", sender: nil)
+        if timer != nil{
+        timer.invalidate()
+    }
     }
     
 }
