@@ -101,6 +101,10 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "next", sender: nil)
         if timer != nil{
         timer.invalidate()
+        moveBotton.isEnabled = true
+        move2Button.isEnabled = true
+        timer = nil
+        AnimationButton.setTitle(playback, for: .normal)
     }
     }
     
